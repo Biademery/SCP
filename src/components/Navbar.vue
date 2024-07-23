@@ -12,7 +12,9 @@
                 </div>
             </aside>
             <div class="logo">
-                <h1>Logo do candidato</h1>
+                <router-link to="/">
+                    <h1>Logo do candidato</h1>
+                </router-link>
             </div>
         </div>
         <ul class="links">
@@ -21,15 +23,15 @@
                 <span class="separator">|</span>
             </li>
             <li>
-                <a href="">PLANOS DE GOVERNO</a>
+                <router-link to="/planosdegoverno">PLANOS DE GOVERNO</router-link>
                 <span class="separator">|</span>
             </li>
             <li>
-                <a href="">EVENTOS</a>
+                <router-link to="/eventos">EVENTOS</router-link>
                 <span class="separator">|</span>
             </li>
             <li>
-                <a href="">VAMOS CONVERSAR?</a>
+                <router-link to="/vamosconversar">VAMOS CONVERSAR?</router-link>
                 <span class="separator">|</span>
             </li>
             <li>
@@ -116,7 +118,8 @@ export default {
     align-items: center;
 }
 
-.links a {
+.links a,
+nav a {
     text-decoration: none;
     color: #000;
     padding: 0 10px;
