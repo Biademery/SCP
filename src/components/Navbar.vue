@@ -4,11 +4,22 @@
             <aside class="social-media">
                 <p>Siga o candidato nas redes:</p>
                 <div class="social-icons">
-                    <img :src="FacebookIcon" alt="Logo do Facebook" class="icon">
-                    <img :src="InstagramIcon" alt="Logo do Instagram" class="icon">
-                    <img :src="XIcon" alt="Logo do X" class="icon">
-                    <img :src="LinkedInIcon" alt="Logo do LinkedIn" class="icon">
-                    <img :src="YoutubeIcon" alt="Logo do Youtube" class="icon">
+                    <a href="https://www.facebook.com/" target="_blank" class="icon">
+                        <img :src="FacebookIcon" alt="Logo do Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" class="icon">
+                        <img :src="InstagramIcon" alt="Logo do Instagram">
+                    </a>
+                    <a href="https://www.x.com/" target="_blank" class="icon">
+                        <img :src="XIcon" alt="Logo do X">
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank0" class="icon">
+                        <img :src="LinkedInIcon" alt="Logo do LinkedIn">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank" class="icon">
+                        <img :src="YoutubeIcon" alt="Logo do Youtube">
+                    </a>
+
                 </div>
             </aside>
             <div class="logo">
@@ -35,11 +46,11 @@
                 <span class="separator">|</span>
             </li>
             <li>
-                <a href="">GRUPOS DE ZAP</a>
+                <router-link to="/gruposzap" href="">GRUPOS DE ZAP</router-link>
                 <span class="separator">|</span>
             </li>
             <li>
-                <a href="">APOIE NOSSA CAMPANHA</a>
+                <router-link to="/apoiecampanha" href="">APOIE NOSSA CAMPANHA</router-link>
             </li>
         </ul>
     </nav>

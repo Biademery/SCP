@@ -1,12 +1,12 @@
 <template>
-    <div>
-        campanha
-    </div>
+    <h1>zap</h1>
 </template>
 
 <script>
 export default {
-    name: "Apoie Campanha",
+    name: 'Grupos de Zap',
+
+
 }
 </script>
 

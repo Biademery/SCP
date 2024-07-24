@@ -3,7 +3,10 @@
         <section class="introduction">
             <div class="intro-left">
                 <div class="intro-text">
-                    <img src="../assets/candidato.png" alt="Foto do candidato" class="candidate-image">
+                    <a href="https://www.youtube.com" target="_blank" class="image-container">
+                        <img src="../assets/icons/play.svg" alt="Ícone de play" class="play-icon">
+                        <img src="../assets/candidato.png" alt="Foto do candidato" class="candidate-image">
+                    </a>
                     <h2>Essa é a minha história</h2>
                     <br>
                     <p>Na suavidade do amanhecer, a vida se revela em cores vivas e promessas renovadas. Cada sorriso é
@@ -54,20 +57,97 @@
             </div>
         </section>
 
-        <section class="eventos" id="evento">
-            <Eventos />
+        <section class="eventos">
+            <section class="schedule">
+                <div class="left">
+                    <div class="intro-text-eventos">
+                        <h2>Acompanhe nossa agenda!</h2>
+                        <br><br>
+                        <p>
+                            Acompanhe nossa agenda para saber em qual evento estarei presente e assim podemos estar mais
+                            próximos. Será um prazer compartilhar momentos significativos e fortalecer nossos laços em
+                            encontros que promovem o diálogo e o crescimento mútuo. Juntos, podemos construir um futuro
+                            melhor e mais conectado.
+                        </p>
+                        <br><br><br>
+                        <router-link to="/eventos" class="agenda">Clique na agenda!</router-link>
+                    </div>
+                </div>
+                <div class="right">
+                    <img src="../assets/icons/calendar.svg" alt="Calendario" class="calendar-image">
+                </div>
+            </section>
+        </section>
+        <section class="vamos-conversar">
+            <div class="left-item">
+                <h2>Essa é nossa gente!</h2>
+                <!-- <carousel :autoplay="true" :autoplayTimeout="3000" :loop="true">
+                        <slide v-for="(image, index) in images" :key="index">
+                            <img :src="image" alt="Imagem da nossa gente" class="carousel-image">
+                        </slide>
+                    </carousel> -->
+            </div>
+            <div class="right-item">
+                <div class="intro-text-item">
+                    <h2>Vamos tomar um café?</h2>
+                    <br>
+                    <p>
+                        Que tal uma visita para tomarmos um café, conversarmos e discutirmos juntos as melhorias que
+                        podemos
+                        implementar para o progresso de nossa cidade? Será ótimo trocarmos ideias e encontrarmos
+                        soluções que
+                        beneficiem a todos. Estou ansioso para ouvir suas sugestões e trabalharmos juntos por um
+                        futuro melhor.
+                    </p>
+                    <br>
+                    <p>Agende nossa visita em sua casa!</p>
+                    <br>
+                    <button class="schedule-button" @click="goToEventos">Agendar</button>
+                </div>
+            </div>
+        </section>
+        <section class="gruposzap">
+            <img src="../assets/icons/whatsapp.svg" alt="Ícone do WhatsApp" class="whatsapp-icon">
+
+            <button class="responder-button">Responder</button>
+            <div class="gruposzap-content">
+                <h2>Participe dos grupos de WhatsApp.</h2>
+                <p>Para debatermos sobre saúde, educação, cultura e melhorias para nossa cidade, junte-se aos grupos
+                    específicos disponíveis em nossa página web.</p>
+                <div class="images">
+                    <img src="../assets/candidato.png" alt="Imagem de grupo" class="grupo-image">
+                    <img src="../assets/candidato.png" alt="Imagem de grupo" class="grupo-image">
+                    <img src="../assets/candidato.png" alt="Imagem de grupo" class="grupo-image">
+                    <img src="../assets/candidato.png" alt="Imagem de grupo" class="grupo-image">
+                </div>
+            </div>
         </section>
     </div>
 </template>
 
 <script>
-import Eventos from './Eventos.vue';
+import { Carousel, Slide } from "vue-carousel"
 
 export default {
     name: 'Home',
     components: {
-        Eventos,
-    }
+        Carousel,
+        Slide,
+    },
+    // data() {
+    //     return {
+    //         images: [
+    //             require('../assets/candidato.png'),
+    //             require('../assets/candidato.png'),
+    //             require('../assets/candidato.png'),
+    //         ]
+    //     };
+    // },
+    methods: {
+        goToEventos() {
+            this.$router.push('/eventos');
+        }
+    },
 }
 </script>
 
@@ -79,14 +159,10 @@ export default {
     justify-content: center;
 }
 
-.home a {
-    text-decoration: none;
-    color: #000;
-}
-
 .introduction {
     display: flex;
     justify-content: space-between;
+
 }
 
 .intro-left {
@@ -97,11 +173,8 @@ export default {
     background-color: #e7e7e7;
     padding: 20px;
     margin-bottom: 20px;
-}
-
-.candidate-image {
-    width: 100%;
-    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000;
 }
 
 .intro-text {
@@ -128,6 +201,26 @@ export default {
     border-top: 10px solid black;
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.candidate-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+}
 
 .intro-text h2 {
     display: flex;
@@ -144,6 +237,8 @@ export default {
     background-color: #e7e7e7;
     padding: 20px;
     margin-top: 30px;
+    text-decoration: none;
+    color: #000;
 }
 
 .speech-container {
@@ -177,5 +272,123 @@ export default {
     border-top: 10px solid transparent;
     border-bottom: 10px solid black;
     transform: rotate(-180deg);
+}
+
+.schedule {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.left {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.agenda {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.right {
+    display: flex;
+    background-color: #e7e7e7;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-image {
+    width: 70%;
+    height: auto;
+    padding: 20px 0;
+
+}
+
+.vamos-conversar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 40px;
+}
+
+.left-item {
+    background-color: #e7e7e7;
+    padding: 20px;
+}
+
+.right-item {
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.schedule-button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.schedule-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.gruposzap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e7e7e7;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.whatsapp-icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.responder-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.responder-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.gruposzap-content {
+    width: 70%;
+    padding-left: 20px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.grupo-image {
+    width: 20%;
+    border-radius: 8px;
 }
 </style>

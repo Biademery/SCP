@@ -4,6 +4,8 @@ import Home from "../components/Home.vue";
 import Eventos from "../components/Eventos.vue";
 import PlanosGoverno from "../components/PlanosGoverno.vue";
 import VamosConversar from "../components/VamosConversar.vue";
+import GruposZap from "../components/GruposZap.vue";
+import ApoieCampanha from "../components/ApoieCampanha.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
@@ -18,6 +20,12 @@ const routes = [
     path: "/vamosconversar",
     name: "Vamos Conversar",
     component: VamosConversar,
+  },
+  { path: "/gruposzap", name: "Grupos de Zap", component: GruposZap },
+  {
+    path: "/apoiecampanha",
+    name: "Apoie Campanha",
+    component: ApoieCampanha,
   },
 ];
 
